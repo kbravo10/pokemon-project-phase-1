@@ -1,17 +1,27 @@
 body{
-    background-color: blueviolet;
+    background-image: url("https://e0.pxfuel.com/wallpapers/881/256/desktop-wallpaper-pokemon-463-gratis-here-super-cool-pokemon.jpg");
 }
 
 header{
-    background-color: red;
+    background-color: rgba(red, green, blue, 1);
     color: white;
 }
 
 main{
-    background-color: white;
+    background-color: rgba(255, 0, 0, 0.5);
+    color: white;
 }
 
 footer{
-    background-color: pink;
-    color: brown;
+    color: white;
 }
+
+button{
+   
+}
+img{
+    height: 300px;
+    width: 310px;
+    back
+}
+
