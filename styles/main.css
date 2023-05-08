@@ -1,0 +1,17 @@
+body{
+    background-color: blueviolet;
+}
+
+header{
+    background-color: red;
+    color: white;
+}
+
+main{
+    background-color: white;
+}
+
+footer{
+    background-color: pink;
+    color: brown;
+}
