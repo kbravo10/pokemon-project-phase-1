@@ -1,0 +1,20 @@
+{
+    "Pokemon": [
+        {
+            "id": 1,
+            "name": "charizard",
+            "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdnBbG6RFnwvjHUdRZNecSRbq1n3vkSwVepK-Qwaa-EA&usqp=CAU&ec=48665698"
+        },
+        {
+            "id": 2,
+            "name": "evee",
+            "image": "https://w7.pngwing.com/pngs/408/105/png-transparent-eevee-pokemon-firered-and-leafgreen-art-charmeleon-charmander-evee-mammal-carnivoran-dog-like-mammal.png"
+        },
+        {
+            "id": 1,
+            "name": "squitle",
+            "image": "https://oyster.ignimgs.com/mediawiki/apis.ign.com/pokemon-blue-version/a/a3/Squirtle.gif?width=1280"
+
+        }
+]
+}
