@@ -44,16 +44,27 @@ document.addEventListener("DOMContentLoaded",(event) =>{
         pokemonChar.appendChild(btn);
         div.appendChild(pokemonChar)
     
-        //adding event listenerv for buitton
+        //adding event listenerv for buitton, hides form.add-pokemon-form and unhides
+        //form.pokemon-real-life
         pokemonChar.addEventListener("click", (e)=>{
             e.preventDefault();
             document.querySelector("form.add-pokemon-form").style.display = "none";
+            document.querySelector("form.pokemon-real-life").style.display = "block";
             realLifeDisplay(realImg)
         })
 }
+    //Display Real life version of the pokemon and a small description
     function realLifeDisplay(realPokemon){
         const realDiv = document.getElementById("real-img");
-        realDiv.setAttribute("src", realPokemon.src)
+        realDiv.setAttribute("src", realPokemon.src);
     }
-       
+
+    //Button to alllow the user to display the main form that 
+    //displays all poekmon img
+    const returnBtn = document.getElementById("return-button");
+    returnBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        returnBtn.parentNode.style.display = "none";
+        document.querySelector("form.add-pokemon-form").style.display = "block"
+    })
 })
