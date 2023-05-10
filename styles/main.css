@@ -1,20 +1,3 @@
-body{
-    background-image: url("https://e0.pxfuel.com/wallpapers/881/256/desktop-wallpaper-pokemon-463-gratis-here-super-cool-pokemon.jpg");
-}
-
-header{
-   
-    color: white;
-}
-
-main{
-    
-    color: white;
-}
-
-footer{
-    color: white;
-}
 
 img{
     height: 300px;
@@ -24,4 +7,3 @@ img{
 form#userPokemon{
     background-color: blueviolet;
 }
-

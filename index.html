@@ -1,6 +1,11 @@
+
 <!DOCTYPE html>
-<html>
+    <html lang="en">
     <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <title>POKEMON IN THE REAL</title>
         <link rel="stylesheet" href="styles/main.css">
     </head>
@@ -35,28 +40,32 @@
         <form class="pokemon-real-life" id="realPoke" style="display: none;">
             <div id="real-img-div">
                 <img id="real-img" src="">
+                <p id="desReal">
+                    
+                </p>
             </div>
 
             <button id="return-button">CHOOSE ANOTHER ONE!!! <br/> click here</button>
         </form>
         <!--end form display pokemon in real life-->
+           
+        <!--form input starts here-->
+        <form class="userPokeInterest" id="userPokemon"> 
             <h1 style="color: white;">CHOOSE EM!</h1>
             <h4 style="color: white;">Choose a pokemon and insert an 
                 image to any <br>pokemon you wish to see real life version.</br>
                 Will be added to website in a day or two.
             </h4>
-        <!--form input starts here-->
-        <form class="userPokeInterest" id="userPokemon">
-                <label style="color: whitesmoke;"> POKEMON NAME: </label>
-                <input type="text" id="pokeName" name="name"></br></br>
-                <label style="color: whitesmoke;">INSERT IMAGE </br>ADDRESS OF POKEMON</label>
-                <input type="text" id="pokeImgAddress" name="image"></br></br>
-                <label style="color: white;">REAL LIFE IMAGE ADDRESS</label>
-                <input type="text" id="realPokeImg" name="real"><br><br>
-                <input type="submit">
-        
+            <label style="color: whitesmoke;"> POKEMON NAME: </label>
+            <input type="text" id="pokeName" name="name"></br></br>
+            <label style="color: whitesmoke;">INSERT IMAGE </br>ADDRESS OF POKEMON</label>
+            <input type="text" id="pokeImgAddress" name="image"></br></br>
+            <label style="color: white;">REAL LIFE IMAGE ADDRESS</label>
+            <input type="text" id="realPokeImg" name="real"><br><br>
+            <input type="submit">
         </form>
         <!--input ends here-->
+
         <!--start include external javascript-->
         <script src="scripts/main.js"> </script>
     </body>

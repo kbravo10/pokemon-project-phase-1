@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded",(event) =>{
         const img = document.createElement("img");
         const realImg = document.createElement("img");
         const btn = document.createElement("button");
+        const pDescription = document.createElement("p");
 
         pokemonChar.setAttribute("class", "chooseEm")
 
@@ -39,6 +40,7 @@ document.addEventListener("DOMContentLoaded",(event) =>{
 
         btn.setAttribute("id", pokeCard["id"]);
         btn.setAttribute("class", "pokeButton");
+        
 
         btn.appendChild(img);
         pokemonChar.appendChild(btn);
@@ -50,13 +52,16 @@ document.addEventListener("DOMContentLoaded",(event) =>{
             e.preventDefault();
             document.querySelector("form.add-pokemon-form").style.display = "none";
             document.querySelector("form.pokemon-real-life").style.display = "block";
-            realLifeDisplay(realImg)
+            realLifeDisplay(realImg, pokeCard["description"])
         })
 }
     //Display Real life version of the pokemon and a small description
-    function realLifeDisplay(realPokemon){
+    function realLifeDisplay(realPokemon, pokeDes){
+        const pDes = document.getElementById("desReal")
         const realDiv = document.getElementById("real-img");
         realDiv.setAttribute("src", realPokemon.src);
+        console.log(typeof(pokeDes))
+        pDes.textContent = pokeDes
     }
 
     //Button to alllow the user to display the main form that 
