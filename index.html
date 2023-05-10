@@ -23,14 +23,16 @@
         </main>
         <!--end main-->
 
+        <iframe width="560" height="315" controls autoplay src="https://www.youtube.com/embed/6xKWiCMKKJg?autoplay=1&loop=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
         <!--start form add pokemon-->
-        <form class="add-pokemon-form">
+        <form class="add-pokemon-form" id="pokeAdd">
             <div id="pokemon-images"></div>
         </form>
         <!--end form-->
 
         <!--start form display pokemon in real life-->
-        <form class="pokemon-real-life" style="display: none;">
+        <form class="pokemon-real-life" id="realPoke" style="display: none;">
             <div id="real-img-div">
                 <img id="real-img" src="">
             </div>
@@ -38,7 +40,23 @@
             <button id="return-button">CHOOSE ANOTHER ONE!!! <br/> click here</button>
         </form>
         <!--end form display pokemon in real life-->
-
+            <h1 style="color: white;">CHOOSE EM!</h1>
+            <h4 style="color: white;">Choose a pokemon and insert an 
+                image to any <br>pokemon you wish to see real life version.</br>
+                Will be added to website in a day or two.
+            </h4>
+        <!--form input starts here-->
+        <form class="userPokeInterest" id="userPokemon">
+                <label style="color: whitesmoke;"> POKEMON NAME: </label>
+                <input type="text" id="pokeName" name="name"></br></br>
+                <label style="color: whitesmoke;">INSERT IMAGE </br>ADDRESS OF POKEMON</label>
+                <input type="text" id="pokeImgAddress" name="image"></br></br>
+                <label style="color: white;">REAL LIFE IMAGE ADDRESS</label>
+                <input type="text" id="realPokeImg" name="real"><br><br>
+                <input type="submit">
+        
+        </form>
+        <!--input ends here-->
         <!--start include external javascript-->
         <script src="scripts/main.js"> </script>
     </body>

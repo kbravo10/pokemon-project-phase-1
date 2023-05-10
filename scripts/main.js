@@ -67,4 +67,15 @@ document.addEventListener("DOMContentLoaded",(event) =>{
         returnBtn.parentNode.style.display = "none";
         document.querySelector("form.add-pokemon-form").style.display = "block"
     })
+
+    //get user input from form#userPoke
+        const userForm = document.querySelector("form#userPokemon");
+        userForm.addEventListener("submit", (e) =>{
+            e.preventDefault();
+            const formData = Object.fromEntries(new FormData(userForm));
+            console.log(formData)
+            addPokeCards(formData)
+        })
+        
+    
 })
