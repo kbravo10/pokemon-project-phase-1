@@ -80,6 +80,36 @@ document.addEventListener("DOMContentLoaded",(event) =>{
         const formData = Object.fromEntries(new FormData(userForm));
         console.log(formData)
         addPokeCards(formData)
+        alert("Your Pokemon has been added")
+        
+    })
+
+    //assign buttons to display and hide certain forms
+    const btnDivDisplay = document.querySelector("div.user-choice");
+    btnDivDisplay.addEventListener("click", (e) => {
+        e.preventDefault();
+        const formAdd = document.querySelector("form#pokeAdd");
+        const formUser = document.querySelector("form#userPokemon");
+        const imgReal = document.querySelector("form#realPoke");
+
+        if(e.target === document.getElementById("yourPC")){
+            formAdd.style.display = "block";
+            if( formUser.style.display = "block"){
+                formUser.style.display = "none";
+            }
+            if(imgReal.style.display = "block"){
+                imgReal.style.display = "none"
+            }
+        }
+        else if(e.target === document.getElementById("go-catch-em")){
+            document.querySelector("form#userPokemon").style.display = "block";
+            if( formAdd.style.display = "block"){
+                formAdd.style.display = "none";
+            }
+            if(imgReal.style.display = "block"){
+                imgReal.style.display = "none"
+            }
+        }
         
     })
     
