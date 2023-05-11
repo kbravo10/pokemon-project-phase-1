@@ -31,13 +31,12 @@ form#poke-add{
     display: flex;
     width: auto;
     height: auto;
-    
-   
 }
 
 strong{
     font-size: 30px;
-
+    width: auto;
+    margin-top: 110px;
 }
 div#pokemon-images{
     margin-left: auto;
@@ -47,8 +46,21 @@ div#pokemon-images{
     width: 400px;
 }
 
-button.pokeButton{
-    margin-right: 15px;
+button.pokeImg{
+    height: 100px;
+    width: 110px;
+}
+img#real-img{
+    height: 400px;
+    width: 450px;
+}
+
+p#desReal{
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 24px;
+    width: 500px;
+    background-color: azure;
 }
 
 div.user-choice{
