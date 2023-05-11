@@ -21,6 +21,9 @@ document.addEventListener("DOMContentLoaded",(event) =>{
         });
     })
 
+    
+   
+
     //add the fetch GET json data to the website using function
     function addPokeCards(pokeCard){
         const div = document.getElementById("pokemon-images")
@@ -77,15 +80,30 @@ document.addEventListener("DOMContentLoaded",(event) =>{
         document.querySelector("form.add-pokemon-form").style.display = "flex"
     })
 
-    //get user input from form#userPoke
+    //get user input from form#userPoke and use post fetch to add json data permanatly
     const userForm = document.querySelector("form#userPokemon");
     userForm.addEventListener("submit", (e) =>{
         e.preventDefault();
         const formData = Object.fromEntries(new FormData(userForm));
-        console.log(formData)
-        addPokeCards(formData)
+
+        //Post fetch user input
+        fetch("http://localhost:3000/Pokemon",{
+        method: "POST",
+        headers:{
+            "Content-type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify({
+            name: formData["name"],
+            image: formData["image"],
+            real: formData["real"]
+        })
+        })
+        .then((res) => res.json())
+        .then((pokeMon) => addPokeCards(pokeMon))
+
         alert("Your Pokemon has been added")
-        
+        userForm.reset()
     })
 
     //assign buttons to display and hide certain forms
