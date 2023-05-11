@@ -82,18 +82,5 @@ document.addEventListener("DOMContentLoaded",(event) =>{
         addPokeCards(formData)
         
     })
-
-    //make nav bar work and display the forms when option clicked
-    const nav = document.querySelector("div.navBar");
-        nav.addEventListener("click", (e) =>{
-            e.preventDefault();
-            console.log("nav bar works")
-            userForm.style.display = "block"
-            if(nav.ref === "hi"){
-                console.log("this nav bar actually works")
-            }
-            document.querySelector("form.add-pokemon-form").style.display = "none"
-        })
-        
     
 })
