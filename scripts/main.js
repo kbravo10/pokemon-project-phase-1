@@ -24,12 +24,13 @@ document.addEventListener("DOMContentLoaded",(event) =>{
     //add the fetch GET json data to the website using function
     function addPokeCards(pokeCard){
         const div = document.getElementById("pokemon-images")
-        const divReal = document.getElementById("real-img")
+       
         const pokemonChar = document.createElement("div");
         const img = document.createElement("img");
         const realImg = document.createElement("img");
         const btn = document.createElement("button");
-        const pDescription = document.createElement("p");
+        
+        const strong = document.createElement("strong")
 
         pokemonChar.setAttribute("class", "chooseEm")
 
@@ -41,10 +42,12 @@ document.addEventListener("DOMContentLoaded",(event) =>{
         btn.setAttribute("id", pokeCard["id"]);
         btn.setAttribute("class", "pokeButton");
         
+        strong.textContent = pokeCard["name"]
 
         btn.appendChild(img);
         pokemonChar.appendChild(btn);
-        div.appendChild(pokemonChar)
+        pokemonChar.appendChild(strong);
+        div.appendChild(pokemonChar);
     
         //adding event listenerv for buitton, hides form.add-pokemon-form and unhides
         //form.pokemon-real-life
@@ -60,7 +63,7 @@ document.addEventListener("DOMContentLoaded",(event) =>{
         const pDes = document.getElementById("desReal")
         const realDiv = document.getElementById("real-img");
         realDiv.setAttribute("src", realPokemon.src);
-        console.log(typeof(pokeDes))
+        
         pDes.textContent = pokeDes
     }
 
@@ -70,7 +73,7 @@ document.addEventListener("DOMContentLoaded",(event) =>{
     returnBtn.addEventListener("click", (e) => {
         e.preventDefault();
         returnBtn.parentNode.style.display = "none";
-        document.querySelector("form.add-pokemon-form").style.display = "block"
+        document.querySelector("form.add-pokemon-form").style.display = "flex"
     })
 
     //get user input from form#userPoke
