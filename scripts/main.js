@@ -96,7 +96,8 @@ document.addEventListener("DOMContentLoaded",(event) =>{
         body: JSON.stringify({
             name: formData["name"],
             image: formData["image"],
-            real: formData["real"]
+            real: formData["real"],
+            description: formData["description"]
         })
         })
         .then((res) => res.json())
