@@ -41,7 +41,8 @@ document.addEventListener("DOMContentLoaded",(event) =>{
 
         btn.setAttribute("id", pokeCard["id"]);
         btn.setAttribute("class", "pokeButton");
-        
+
+        strong.setAttribute("class", "imgName")
         strong.textContent = pokeCard["name"]
 
         btn.appendChild(img);
@@ -94,9 +95,11 @@ document.addEventListener("DOMContentLoaded",(event) =>{
         const formAdd = document.querySelector("form#pokeAdd");
         const formUser = document.querySelector("form#userPokemon");
         const imgReal = document.querySelector("form#realPoke");
-
+        const gif = document.getElementById("gif");
         if(e.target === document.getElementById("yourPC")){
             formAdd.style.display = "block";
+            gif.style.display = "none"
+
             if( formUser.style.display = "block"){
                 formUser.style.display = "none";
             }
@@ -111,6 +114,9 @@ document.addEventListener("DOMContentLoaded",(event) =>{
             }
             if(imgReal.style.display = "block"){
                 imgReal.style.display = "none"
+            }
+            if(gif.style.display ==="none"){
+                gif.style.display = "block"
             }
         }
         
