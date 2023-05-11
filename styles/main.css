@@ -2,6 +2,7 @@
 img{
     height: 300px;
     width: 310px;
+    opacity: .5;
 }
 
 form#userPokemon{

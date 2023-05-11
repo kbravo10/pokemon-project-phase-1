@@ -74,13 +74,15 @@ document.addEventListener("DOMContentLoaded",(event) =>{
     })
 
     //get user input from form#userPoke
-        const userForm = document.querySelector("form#userPokemon");
-        userForm.addEventListener("submit", (e) =>{
-            e.preventDefault();
-            const formData = Object.fromEntries(new FormData(userForm));
-            console.log(formData)
-            addPokeCards(formData)
-        })
+    const userForm = document.querySelector("form#userPokemon");
+    userForm.addEventListener("submit", (e) =>{
+        e.preventDefault();
+        const formData = Object.fromEntries(new FormData(userForm));
+        console.log(formData)
+        addPokeCards(formData)
+    })
+
+    //make nav bar work and display the forms when option clicked
         
     
 })
