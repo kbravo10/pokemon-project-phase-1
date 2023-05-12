@@ -20,19 +20,20 @@
 
 
         <img id="gif" src="https://pporg-cdn.nullcontent.net/monthly_2021_01/large.5f3b7da953ca75b6-animated-pokemon-gif-auto-design-tech.gif.8149f6785bbf6d5b0614fc68a987f815.gif">
-        <!--
-        <iframe width="560" height="315" controls autoplay src="https://www.youtube.com/embed/6xKWiCMKKJg?autoplay=1&loop=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        -->
+        
         <!--start button-->
-        <div class="user-choice">
-            <button id="yourPC">YOUR PC</button>
-            <button id="go-catch-em">Go Catch EM</button>
+        <div class="start">
+            <h2>CHOOSE TO SEE THE POKEMON IN YOUR PC OR ADD MORE POKEMON TO YOUR PC</h2>
+            <div class="user-choice">
+                <button id="yourPC">YOUR PC</button>
+                <button id="go-catch-em">Go Catch EM<br></button>
+            </div>
         </div>
         <!--end button-->
 
         <!--start form add pokemon-->
         <form class="add-pokemon-form" id="pokeAdd" style="display: none;">
-            <div id="pokemon-images"></div>
+            <div id="pokemon-images"><br>CHOOSE ANY POKEMON IMAGE<br><br></div>
         </form>
         <!--end form-->
 
@@ -55,13 +56,14 @@
                 image of any <br>pokemon you wish to upload. Then submit a real life version.</br>
                 Finally add a small descriptive paragraph.
             </h4>
-            <label style="color: whitesmoke;"> POKEMON NAME: </label>
+            <label> POKEMON NAME: </label>
             <input type="text" id="pokeName" name="name"></br></br>
-            <label style="color: whitesmoke;">INSERT IMAGE </br>ADDRESS OF POKEMON</label>
+            <label>INSERT IMAGE </br>ADDRESS OF POKEMON</label>
             <input type="text" id="pokeImgAddress" name="image"></br></br>
-            <label style="color: white;">REAL LIFE IMAGE ADDRESS</label>
+            <label>REAL LIFE IMAGE ADDRESS</label>
             <input type="text" id="realPokeImg" name="real"><br><br>
-            <label>Entera small paragraphof the background or <br>the real version of the pokemon!</label>
+            <label>ENTER SMALL PARAGRAPH OF THE BACKGROUND OR <br>THE REAL VERSION OF
+                 THE POKEMON!</label>
             <input type="text" id="realPokeDescription" name="description"><br><br>
 
             <input type="submit">

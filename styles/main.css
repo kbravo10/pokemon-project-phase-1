@@ -4,6 +4,11 @@ body{
     text-align: center;
 }
 
+div.start{
+    background-color: black;
+    color: white;
+}
+
 header{
     margin-left: auto;
     margin-right: auto;
@@ -80,4 +85,9 @@ div.user-choice{
 
 form#userPokemon{
     background-color: blueviolet;
+}
+
+label{
+    color: whitesmoke;
+    font-size: 20px;
 }
