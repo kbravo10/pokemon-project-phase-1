@@ -21,18 +21,13 @@ document.addEventListener("DOMContentLoaded",(event) =>{
         });
     })
 
-    
-   
-
     //add the fetch GET json data to the website using function
     function addPokeCards(pokeCard){
         const div = document.getElementById("pokemon-images")
-       
         const pokemonChar = document.createElement("div");
         const img = document.createElement("img");
         const realImg = document.createElement("img");
         const btn = document.createElement("button");
-        
         const strong = document.createElement("strong")
 
         pokemonChar.setAttribute("class", "chooseEm")
@@ -67,7 +62,6 @@ document.addEventListener("DOMContentLoaded",(event) =>{
         const pDes = document.getElementById("desReal")
         const realDiv = document.getElementById("real-img");
         realDiv.setAttribute("src", realPokemon.src);
-        
         pDes.textContent = pokeDes
     }
 
@@ -138,7 +132,8 @@ document.addEventListener("DOMContentLoaded",(event) =>{
                 gif.style.display = "block"
             }
         }
-        
+        else if(e.target === document.getElementById("release")){
+            console.log("you smart")
+        }
     })
-    
 })
