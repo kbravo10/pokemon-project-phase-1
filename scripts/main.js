@@ -124,6 +124,9 @@ document.addEventListener("DOMContentLoaded",(event) =>{
             if(imgReal.style.display = "block"){
                 imgReal.style.display = "none"
             }
+            if(release.style.display = "block"){
+                release.style.display = "none"
+            }
          
         }
         else if(e.target === document.getElementById("go-catch-em")){
