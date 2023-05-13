@@ -22,3 +22,16 @@ All of the data(object) is stored in the json file `db.json()`. You can access J
 The resource where you can find the json data is located at `http://localhost:3000/Pokemon`
 After running the json server open up `index.html` in another terminal. A new window in your browser will pop up and will display your HTML code. 
 
+## Instructions 
+
+### Page loads
+
+There is a `DOMEventListener` event that allows the page to load succesfully. After loading you are greeted with a `header`, an `img` with the id = gif that displays a gif and a `div` with the class=start that display two buttons that will display other forms.
+
+### The page loaded buttons
+
+In the `div` with `class=start` theres another `div` with `class=user-choice`, there are 2 buttons one with two different id's. 
+
+### Choosing the `YOUR PC` button
+
+When the web application is ran for the first time you are given a few pokemon that you can choose from. They images are in a `form` with the id `pokemon-images` 
