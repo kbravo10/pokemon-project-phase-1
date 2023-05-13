@@ -105,12 +105,15 @@ document.addEventListener("DOMContentLoaded",(event) =>{
 
     //assign buttons to display and hide certain forms
     const btnDivDisplay = document.querySelector("div.user-choice");
+    const formAdd = document.querySelector("form#pokeAdd");
+    const formUser = document.querySelector("form#userPokemon");
+    const imgReal = document.querySelector("form#realPoke");
+    const gif = document.getElementById("gif");
+    const release = document.querySelector("form#release-form");
+
     btnDivDisplay.addEventListener("click", (e) => {
         e.preventDefault();
-        const formAdd = document.querySelector("form#pokeAdd");
-        const formUser = document.querySelector("form#userPokemon");
-        const imgReal = document.querySelector("form#realPoke");
-        const gif = document.getElementById("gif");
+        
         if(e.target === document.getElementById("yourPC")){
             formAdd.style.display = "block";
             gif.style.display = "none"
@@ -121,6 +124,7 @@ document.addEventListener("DOMContentLoaded",(event) =>{
             if(imgReal.style.display = "block"){
                 imgReal.style.display = "none"
             }
+         
         }
         else if(e.target === document.getElementById("go-catch-em")){
             document.querySelector("form#userPokemon").style.display = "block";
@@ -136,14 +140,11 @@ document.addEventListener("DOMContentLoaded",(event) =>{
         }
         else if(e.target === document.getElementById("release")){
             
-            const release = document.querySelector("form#release-form")
+            
             release.style.display = "block"
             release.addEventListener("submit", (relEvent) => {
                 relEvent.preventDefault();
-
-                //console.log(release.querySelector("input#releaseName").value)
                 deletePokemon(release.querySelector("input#releaseName").value)
-                
             })
         }
     })
