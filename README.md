@@ -41,3 +41,18 @@ They for has a `<div id=real-img-div>` that contains:
 - `img` with the source of the image
 - `p` that has the textcontent of a small paragraph describing the real life version of the pokemon
 
+Theres a choice to click a `<button id=return-button>` that once clicked will hide the current form and dispplay the `div` for displaying the pokemon in your pc. 
+
+### Choosing `Go Catch EM` button
+
+This option hides the pc form and displays a `<form class=userPokeInterest id=userPokemon>` This form is an input form that get the user input. 
+- name of the pokemon they want to add
+- The image of the animated pokemon
+- The real life image of the pokemon
+- A small descriptive input of the pokemon in real life (`<p>`)
+
+The submit button then has `userForm.addEventListener('submit', (e) => {})` that makes all the user inputs into an object by using 
+`const formData = Object.fromEntries(new FormData(userForm));`
+A `POST fetch` request is then done to post the user object data into `db.json`, and also calls `addPokeCards()` to add the object values into the DOM withougth refreshing the page. 
+Once submit is clicked a small alert pops up telling you that the pokemon has been added to the pc.
+
