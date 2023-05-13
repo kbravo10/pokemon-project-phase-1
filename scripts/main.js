@@ -133,7 +133,13 @@ document.addEventListener("DOMContentLoaded",(event) =>{
             }
         }
         else if(e.target === document.getElementById("release")){
-            console.log(e.target)
+            
+            const release = document.querySelector("form#release-form")
+            release.addEventListener("submit", (relEvent) => {
+                relEvent.preventDefault();
+                console.log(e)
+            })
+            console.log(e.target.value)
         }
     })
 })
