@@ -39,6 +39,8 @@ document.addEventListener("DOMContentLoaded",(event) =>{
 
         btn.setAttribute("id", pokeCard["id"]);
         btn.setAttribute("class", "pokeButton");
+        btn.setAttribute("name", pokeCard["name"])
+        btn.setAttribute("value", pokeCard["Release"])
 
         strong.setAttribute("class", "imgName")
         strong.textContent = pokeCard["name"]
@@ -137,9 +139,30 @@ document.addEventListener("DOMContentLoaded",(event) =>{
             const release = document.querySelector("form#release-form")
             release.addEventListener("submit", (relEvent) => {
                 relEvent.preventDefault();
-                console.log(e)
+
+                //console.log(release.querySelector("input#releaseName").value)
+                deletePokemon(release.querySelector("input#releaseName").value)
+                
             })
-            console.log(e.target.value)
         }
     })
+
+    //delete pokemon
+    function deletePokemon(namePokemon){
+        
+        const btnName = document.getElementsByName(namePokemon)[0];
+        console.log(btnName.id)
+        if(btnName.value != "no"){
+            fetch(`http://localhost:3000/Pokemon/${btnName.id}`,{
+                method: "DELETE",
+                headers:{
+                    "Content-type": "application/json",
+                    "Accept": "application/json"
+                }
+            })
+        }
+        else{
+            alert("THE POKEMON YOU WANT TO RELEASE CAN NOT BE RELEASED!!! KEPT FORVEVER")
+        }
+    }
 })
