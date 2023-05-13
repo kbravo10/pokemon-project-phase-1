@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded",(event) =>{
             }
         }
         else if(e.target === document.getElementById("release")){
-            console.log("you smart")
+            console.log(e.target)
         }
     })
 })
