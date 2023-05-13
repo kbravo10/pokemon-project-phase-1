@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded",(event) =>{
     returnBtn.addEventListener("click", (e) => {
         e.preventDefault();
         returnBtn.parentNode.style.display = "none";
-        document.querySelector("form.add-pokemon-form").style.display = "flex"
+        document.querySelector("form.add-pokemon-form").style.display = "block"
     })
 
     //get user input from form#userPoke and use post fetch to add json data permanatly
@@ -137,6 +137,7 @@ document.addEventListener("DOMContentLoaded",(event) =>{
         else if(e.target === document.getElementById("release")){
             
             const release = document.querySelector("form#release-form")
+            release.style.display = "block"
             release.addEventListener("submit", (relEvent) => {
                 relEvent.preventDefault();
 
@@ -151,7 +152,6 @@ document.addEventListener("DOMContentLoaded",(event) =>{
     function deletePokemon(namePokemon){
         
         const btnName = document.getElementsByName(namePokemon)[0];
-        console.log(btnName.id)
         if(btnName.value != "no"){
             fetch(`http://localhost:3000/Pokemon/${btnName.id}`,{
                 method: "DELETE",
@@ -162,7 +162,7 @@ document.addEventListener("DOMContentLoaded",(event) =>{
             })
         }
         else{
-            alert("THE POKEMON YOU WANT TO RELEASE CAN NOT BE RELEASED!!! KEPT FORVEVER")
+            alert(`THE POKEMON YOU WANT TO RELEASE CAN NOT BE RELEASED!!! \n KEPT FORVEVER`)
         }
     }
 })
