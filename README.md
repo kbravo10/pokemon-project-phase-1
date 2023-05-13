@@ -30,8 +30,14 @@ There is a `DOMEventListener` event that allows the page to load succesfully. Af
 
 ### The page loaded buttons
 
-In the `div` with `class=start` theres another `div` with `class=user-choice`, there are 2 buttons one with two different id's. 
+In the `div` with `class=start` theres another `div` with `class=user-choice`, there are 2 buttons one with two different id's. Then a GET request is made to get all the data from the db.json and add it to the `<div id=pokemon-images>`. 
+- `img` with the pokemon image source
+- `strong` with the name of the pokemon
 
 ### Choosing the `YOUR PC` button
 
-When the web application is ran for the first time you are given a few pokemon that you can choose from. They images are in a `form` with the id `pokemon-images` 
+When the web application is ran for the first time you are given a few pokemon that you can choose from. They images are in a `form` with the id `pokemon-images`. Clicking on any image will call another event listener that hides the form that displays the pokemon and shows another form that displays an image of the real life version of the pokemon. 
+They for has a `<div id=real-img-div>` that contains:
+- `img` with the source of the image
+- `p` that has the textcontent of a small paragraph describing the real life version of the pokemon
+
