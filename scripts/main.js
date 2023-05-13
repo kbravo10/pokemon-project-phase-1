@@ -41,6 +41,9 @@ document.addEventListener("DOMContentLoaded",(event) =>{
         btn.setAttribute("class", "pokeButton");
         btn.setAttribute("name", pokeCard["name"])
         btn.setAttribute("value", pokeCard["Release"])
+        if(btn.value === "undefined"){
+            btn.value = "none"
+        }
 
         strong.setAttribute("class", "imgName")
         strong.textContent = pokeCard["name"]
@@ -114,6 +117,7 @@ document.addEventListener("DOMContentLoaded",(event) =>{
     btnDivDisplay.addEventListener("click", (e) => {
         e.preventDefault();
         
+        //user selcts YOUR PC
         if(e.target === document.getElementById("yourPC")){
             formAdd.style.display = "block";
             gif.style.display = "none"
@@ -129,6 +133,8 @@ document.addEventListener("DOMContentLoaded",(event) =>{
             }
          
         }
+
+        //USER selects Go Catch EM
         else if(e.target === document.getElementById("go-catch-em")){
             document.querySelector("form#userPokemon").style.display = "block";
             if( formAdd.style.display = "block"){
@@ -140,11 +146,28 @@ document.addEventListener("DOMContentLoaded",(event) =>{
             if(gif.style.display ==="none"){
                 gif.style.display = "block"
             }
+            if(release.style.display = "block"){
+                release.style.display = "none"
+            }
         }
+
+        //user selects Release a Pokemon
         else if(e.target === document.getElementById("release")){
-            
-            
             release.style.display = "block"
+
+            if( formAdd.style.display = "block"){
+                formAdd.style.display = "none";
+            }
+            if(imgReal.style.display = "block"){
+                imgReal.style.display = "none"
+            }
+            if(gif.style.display ==="none"){
+                gif.style.display = "block"
+            }
+            if( formUser.style.display = "block"){
+                formUser.style.display = "none";
+            }
+
             release.addEventListener("submit", (relEvent) => {
                 relEvent.preventDefault();
                 deletePokemon(release.querySelector("input#releaseName").value)
@@ -157,7 +180,8 @@ document.addEventListener("DOMContentLoaded",(event) =>{
         
         const btnName = document.getElementsByName(namePokemon)[0];
         if(btnName.value != "no"){
-            fetch(`http://localhost:3000/Pokemon/${btnName.id}`,{
+            btnName.parentElement.remove()
+            fetch(`http://localhost:3000/Pokemon/${btnName["id"]}`,{
                 method: "DELETE",
                 headers:{
                     "Content-type": "application/json",
@@ -168,5 +192,7 @@ document.addEventListener("DOMContentLoaded",(event) =>{
         else{
             alert(`THE POKEMON YOU WANT TO RELEASE CAN NOT BE RELEASED!!! \n KEPT FORVEVER`)
         }
+        alert(`BYE BYE ${namePokemon}` )
+        document.getElementById("release-form").reset()
     }
 })
