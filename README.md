@@ -4,6 +4,8 @@ This project is to show my skills to the date that i have learned.
 Pokemon in the real displays a few pokemon and shows what they are based on.
 The user can also add there own pokemon if they have the information.
 
+
+
 ## Project requirement
 
 - Your app must be a HTML/CSS/JS frontend that accesses data from a public API or from a db.json file using json-server. Your API or db.json should return a collection of at least 5 objects with each object having at least 3 attributes. All interactions between the client and the API should be handled asynchronously and use JSON as the communication format. Try to avoid using an API that requires a key. APIs that are free and require no authorization will be easiest to use. For ideas, see this list of no-auth APIsLinks to an external site.. If you would like to use an API that requires a key, please consult with your instructor on how to protect that key. NEVER push your API key to github!
@@ -16,6 +18,8 @@ The user can also add there own pokemon if they have the information.
 
 - Follow good coding practices. Keep your code DRY (Do not repeat yourself) by utilizing functions to abstract repetitive code.
 
+
+
 ## Start Server
 
 All of the data(object) is stored in the json file `db.json()`. Install `npm install -g json-server`.
@@ -23,11 +27,15 @@ All of the data(object) is stored in the json file `db.json()`. Install `npm ins
 The resource where you can find the json data is located at `http://localhost:3000/Pokemon`
 After running the json server open up `index.html` in another terminal. A new window in your browser will pop up and will display your HTML code. 
 
-## Instructions 
+
+
+## FUNCTIONALITY
 
 ### Page loads
 
 There is a `DOMEventListener` event that allows the page to load succesfully. After loading you are greeted with a `header`, an `img` with the id = gif that displays a gif and a `div` with the class=start that display two buttons that will display other forms.
+
+
 
 ### The page loaded buttons
 
@@ -54,6 +62,8 @@ In the `div` with `class=start` theres another `div` with `class=user-choice`, t
 - `img` with the pokemon image source
 - `strong` with the name of the pokemon
 
+
+
 ### Choosing the `YOUR PC` button
 
 When the web application is ran for the first time you are given a few pokemon that you can choose from. They images are in a `form` with the id `pokemon-images`. Clicking on any image will call another event listener that hides the form that displays the pokemon and shows another form that displays an image of the real life version of the pokemon. 
@@ -62,6 +72,8 @@ They for has a `<div id=real-img-div>` that contains:
 - `p` that has the textcontent of a small paragraph describing the real life version of the pokemon
 
 Theres a choice to click a `<button id=return-button>` that once clicked will hide the current form and dispplay the `div` for displaying the pokemon in your pc. 
+
+
 
 ### Choosing `Go Catch EM` button
 
@@ -76,18 +88,72 @@ The submit button then has `userForm.addEventListener('submit', (e) => {})` that
 A `POST fetch` request is then done to post the user object data into `db.json`, and also calls `addPokeCards()` to add the object values into the DOM withougth refreshing the page. 
 Once submit is clicked a small alert pops up telling you that the pokemon has been added to the pc.
 
-## function add pokemoncards()
-
-        const div = document.getElementById("pokemon-images")
-        const pokemonChar = document.createElement("div");
-        const img = document.createElement("img");
-        const realImg = document.createElement("img");
-        const btn = document.createElement("button");
-        const strong = document.createElement("strong")
-
-This function creates and assigns elements values from both the GET and POST fetch requests. 
 
 
+### Choosing the Release button
+
+Choosing this button hides all othe forms except the `form#realease-form` and `img#gif`. This button listens for an event:
+
+    release.addEventListener("submit", (relEvent) => {
+    relEvent.preventDefault();
+    deletePokemon(release.querySelector("input#releaseName").value)    
+it passes the value of the input to a function
+#### `function deletePokemon()`
+that takes the value and if the pokemon can be deleted a `delete fetch` is called
+
+    fetch(`http://localhost:3000/Pokemon/${btnName["id"]}`,{
+        method: "DELETE",
+        headers:{
+            "Content-type": "application/json",
+            "Accept": "application/json"
+        }
+    })
+This deletes the pokemon permanantly from the json file. 
+
+### function add pokemoncards()
+
+    const div = document.getElementById("pokemon-images")
+    const pokemonChar = document.createElement("div");
+    const img = document.createElement("img");
+    const realImg = document.createElement("img");
+    const btn = document.createElement("button");
+    const strong = document.createElement("strong")
+
+This function creates and assigns elements values from both the GET and POST fetch requests. Appends `img` to `btn`, `btn` and `strong` to `pokeChar`, and finnally `pokeChar` to `div` id = pokemon-images in the HTML document.
+
+    fetch("http://localhost:3000/Pokemon",{
+        method: "POST",
+        headers:{
+            "Content-type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify({
+            name: formData["name"],
+            image: formData["image"],
+            real: formData["real"],
+            description: formData["description"]
+        })
+        })
+        .then((res) => res.json())
+        .then((pokeMon) => addPokeCards(pokeMon))
+
+
+The fetch requests takes the users input and adds it to the `div` id = pokemon-images.
+
+
+
+### function realLifeDisplay()
+    const pDes = document.getElementById("desReal")
+    const realDiv = document.getElementById("real-img");
+    realDiv.setAttribute("src", realPokemon.src);
+    pDes.textContent = pokeDes
+
+This function gets the real life image of the pokemon and adds and attribute to `div` id = real-img, `src`, to equal the image. It then assigns the description of the pokemon to the text content of `p` with id = desReal. 
+
+
+
+## Contributions
+Pull request are appreciated. Any feed back on improving the project(do's and dont's).
 
 
 ## Pokemon info citations
@@ -136,3 +202,6 @@ This function creates and assigns elements values from both the GET and POST fet
 ### Background
 - Pokemon Wallpaper. WallpaperSafari. (2018, January 3). https://wallpapersafari.com/pokemon-wallpaper/ 
 
+
+# LICENCCE
+[MIT]( https://github.com/dotnet/runtime/blob/9dd59af3aee2f403e63887afef50d98022a2e575/LICENSE.TXT )
