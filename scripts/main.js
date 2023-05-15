@@ -37,13 +37,14 @@ document.addEventListener("DOMContentLoaded",(event) =>{
 
         realImg.setAttribute("src", pokeCard["real"]);
 
+        let rel;
+        if(pokeCard["Release"] === "no")
+            rel = pokeCard["Release"]
+        else rel = 'none';
         btn.setAttribute("id", pokeCard["id"]);
         btn.setAttribute("class", "pokeButton");
         btn.setAttribute("name", pokeCard["name"])
-        btn.setAttribute("value", pokeCard["Release"])
-        if(btn.value === "undefined"){
-            btn.value = "none"
-        }
+        btn.setAttribute("value", rel)
 
         strong.setAttribute("class", "imgName")
         strong.textContent = pokeCard["name"]
@@ -188,11 +189,12 @@ document.addEventListener("DOMContentLoaded",(event) =>{
                     "Accept": "application/json"
                 }
             })
+            alert(`BYE BYE ${namePokemon}` )
+       
         }
         else{
             alert(`THE POKEMON YOU WANT TO RELEASE CAN NOT BE RELEASED!!! \n KEPT FORVEVER`)
         }
-        alert(`BYE BYE ${namePokemon}` )
         document.getElementById("release-form").reset()
     }
 })

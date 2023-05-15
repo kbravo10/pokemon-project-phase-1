@@ -75,19 +75,28 @@ p#desReal{
 }
 
 div.user-choice{
+    height: 160px;
+    padding-top: 20px;
     margin-left: auto;
     margin-right: auto;
-    text-align: center;
-    
 }
 
 
 
 form#userPokemon{
     background-color: blueviolet;
+    height:450px;
 }
 
 label{
     color: whitesmoke;
     font-size: 20px;
+}
+
+
+form#release-form{
+    text-align: center;
+    height: 100px;
+    background-color: red;
+    padding-top: 50px;
 }
